@@ -4,15 +4,19 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = {
   entry: './main.js',
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.[hash].js'
   },
   plugins: [
     new HtmlwebpackPlugin({
       title: 'Webpack-demos',
-      filename: 'index.html'
+      filename: './view/index.html'
+    }),
+    new HtmlwebpackPlugin({
+      template: './template/index.html',
+      filename: './view/index2.html',
     }),
     new OpenBrowserPlugin({
-      url: 'http://localhost:8080'
+      url: 'http://localhost:8080/view'
     })
   ]
 };

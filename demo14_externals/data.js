@@ -1,0 +1,1 @@
+var data_test = 'Hello World';

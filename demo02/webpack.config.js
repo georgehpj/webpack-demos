@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 module.exports = {
   entry: {
     bundle1: './main1.js',
@@ -5,5 +6,12 @@ module.exports = {
   },
   output: {
     filename: '[name].js'
-  }
+  },
+  plugins:[
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 };
